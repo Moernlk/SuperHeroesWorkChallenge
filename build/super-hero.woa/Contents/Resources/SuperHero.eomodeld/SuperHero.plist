@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = abilityID; 
+            name = abilityID; 
+            prototypeName = id; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = name; name = name; prototypeName = varchar100; }
+    ); 
+    className = "br.com.doit.SuperHero.model.SuperHero"; 
+    classProperties = (ability, name); 
+    externalName = "super_hero"; 
+    fetchSpecificationDictionary = {}; 
+    name = SuperHero; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Ability; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = abilityID; }); 
+            name = ability; 
+        }
+    ); 
+}

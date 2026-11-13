@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {columnName = description; name = description; prototypeName = varchar100; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            columnName = strenth; 
+            name = strenth; 
+            prototypeName = javaEnum; 
+            valueClassName = "br.com.doit.SuperHero.model.Strenth"; 
+        }
+    ); 
+    className = "br.com.doit.SuperHero.model.Ability"; 
+    classProperties = (description, strenth, superHeros); 
+    externalName = ability; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = Ability; }; 
+    name = Ability; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = SuperHero; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = abilityID; sourceAttribute = id; }); 
+            name = superHeros; 
+        }
+    ); 
+}

@@ -1,0 +1,15 @@
+Layout : Main {
+}
+
+FetcherRepetition : WORepetition {
+	list = superHeroes;
+	item = superHeroAtual;
+}
+
+NewLinePower : WOPopUpButton {
+	list = powers;
+	item = powerLocal;
+	displayString = powerLocal.description;
+	selection = powerAtual;
+	noSelectionString = "selecione";
+}

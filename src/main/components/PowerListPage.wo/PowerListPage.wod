@@ -1,0 +1,15 @@
+Layout: Main{
+
+}
+FetcherRepetition: WORepetition {
+list = powers;
+item= powerAtual;
+}
+NewLineStrength: WOPopUpButton {
+list = forcas;
+item = forcaItem;
+selection= powerNovo.strenth; 
+noSelectionString="Select";
+}
+
+

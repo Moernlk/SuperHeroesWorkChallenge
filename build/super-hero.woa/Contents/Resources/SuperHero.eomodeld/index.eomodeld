@@ -1,0 +1,9 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {}; 
+    entities = (
+        {className = "br.com.doit.SuperHero.model.Ability"; name = Ability; }, 
+        {className = "br.com.doit.SuperHero.model.SuperHero"; name = SuperHero; }
+    ); 
+}

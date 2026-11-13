@@ -1,0 +1,90 @@
+<webobjects name="Layout">
+
+
+
+  <div class="table-title">
+    <h2>Powers</h2>
+  </div>
+
+  <wo:WOConditional condition="$temSucesso">
+   <div class="table-title">
+    <p class="msg-sucesso"><wo:WOString value="$sucesso" /></p>
+   </div> 
+  </wo:WOConditional>
+
+  <div class="table-title" style="margin:5px;"><wo:WOHyperlink action="$abrirForm">Add new power</wo:WOHyperlink></div>
+  
+  
+  <div class="area-tables">   
+  <wo:WOConditional condition="$listaVazia" negate="true">
+    <table class="table">
+      <tr>
+        <th>Description</th>
+        <th>Strength</th>
+        <th>Actions</th>
+      </tr>
+      <webobjects name="FetcherRepetition">
+        <tr>
+          <td><wo:WOString value="$powerAtual.description" /></td>
+          <td><wo:WOString value="$powerAtual.strenth" /></td>
+          <td id="action-area">
+			<wo:WOHyperlink class="inner-btn-table-area" action="$delete"><wo:WOImage class="inner-btn-table" framework="app" filename="delete.png" /></wo:WOHyperlink>	          
+			<wo:WOHyperlink class="inner-btn-table-area" action="$edit"><wo:WOImage class="inner-btn-table" framework="app" filename="edit.png" /></wo:WOHyperlink>	          
+          </td>
+        </tr>
+      </webobjects>
+    </table>
+  </wo:WOConditional>
+
+  <wo:WOConditional condition="$listaVazia">
+    <p>List without any power</p>
+  </wo:WOConditional>
+
+
+
+
+
+
+  <wo:WOConditional condition="$mostrandoForm">
+    <div class="form-box">
+    	<div class="table-title">
+      <h3>New power</h3>
+      	</div>
+
+      <wo:WOConditional condition="$temErro">
+       <div class="table-title">
+      
+        <p class="msg-erro"><wo:WOString value="$erro" /></p>
+        </div>
+      </wo:WOConditional>
+
+       <div class="table-div">
+       <wo:WOForm>
+        <table class="table">
+          <tr>
+            <th>Description</th>
+            <th>Strength</th>
+            
+            
+          </tr>
+          <tr>
+            <td><wo:WOTextField value="$powerNovo.description" size="40" /></td>
+          
+           
+            <td><webobjects name="NewLineStrength" /></td>
+            
+           
+          </tr>
+        </table>
+        
+        <div class="inner-header">
+        <wo:WOSubmitButton id="header-btn" class="button" action="$salvar" value="Salvar" />
+        <wo:WOSubmitButton id="header-btn" class="button" action="$cancelar" value="Cancelar" />
+        </div>
+        
+      </wo:WOForm>
+     </div>
+    </div>
+  </wo:WOConditional>
+</div>
+</webobjects>
